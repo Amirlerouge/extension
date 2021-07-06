@@ -1,25 +1,41 @@
 {
-    "name": "Hello",
-    "action": {},
-    "manifest_version": 3,
-    "version": "0.1",
-    "description": "Simple program that reminds you not to spend money",
-    "permissions": [
-      "activeTab",
-      "scripting"
-    ],
-    "content_scripts": [
-        {
-          "matches": [
-            "https://*.zalando.ch/*",
-            "https://*.zalando.ch/accueil-femme/"
-
-          ],
-          "all_frames": true,
-          "js": ["content-script.js"]
-        }
-      ],
-    "background": {
-      "service_worker": "background.js"
-    }
-  }
+  "name":"Example",
+  "description":"wanna be Carrot 🥕",
+  "manifest_version":3,
+  "icons":{
+     "16":"16.png",
+     "32":"32.png",
+     "48":"48.png",
+     "128":"128.png"
+  },
+  "background":{
+     "service_worker":"background.js"
+  },
+  "action":{
+     "default_popup":"popup.html",
+     "default_icons":{
+        "16":"16.png",
+        "32":"32.png",
+        "48":"48.png",
+        "128":"128.png"
+     }
+  },
+  "options_page": "options.html",
+  "version":"0.1",
+  "permissions":[
+     "activeTab",
+     "tabs",
+     "storage",
+     "scripting"
+  ],
+  "content_scripts":[
+     {
+        "matches":[
+           "*://*.nike.com/*"
+        ],
+        "js":[
+           "contentScript.js"
+        ]
+     }
+  ]
+}
