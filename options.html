@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>OPTION PAGE</title>
+<style>
+    html {
+  width: 100%;
+  height: 100vh;
+  background-color: #8e76c4;
+  overflow: hidden;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+body{
+  background-color: transparent;
+}
+h1 {
+  color: #fea263;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin: 0;
+}
+h2 {
+  color: #ffedc5;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.wrapper {
+  position: relative;
+  height: 400px;
+  width: 750px;
+}
+
+.bottle-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+}
+.bottle-wrapper#bottle2 {
+  position: absolute;
+  bottom: -8px;
+  right: 0px;
+}
+.bottle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #e7c0b1;
+  overflow: hidden;
+}
+.bottle #liquid {
+  position: absolute;
+  height: 20px;
+  width: 40px;
+  bottom: 0;
+  left: 5px;
+  bottom: 5px;
+  background-color: #f8927b;
+  border-radius: 5px;
+  z-index: 2;
+  -webkit-animation: fill 10s infinite;
+  animation: fill 10s infinite;
+}
+.neck {
+  position: absolute;
+  width: 17px;
+  height: 10px;
+  top: -10px;
+  left: 16px;
+  background-color: #e7c0b1;
+  z-index: 2;
+}
+.top {
+  position: absolute;
+  width: 25px;
+  height: 5px;
+  top: -15px;
+  left: 12px;
+  background-color: #e7c0b1;
+  z-index: 2;
+}
+.bottle:after,
+.neck:after,
+.top:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  background-color: #dcb7a5;
+  border-radius: 0 5px;
+}
+#bottle2 {
+  transform: scale(.7);
+}
+#bottle2 #liquid {
+  background-color: #7e33aa;
+  animation-delay: -2s;
+}
+.pumpkin-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 500px;
+  z-index: 30;
+}
+.pumpkin {
+  position: relative;
+  height: 8rem;
+  width: 6rem;
+  background-color: #ffa066;
+  border-radius: 100%;
+  box-shadow: -30px 0 0 0 #fe9554, -60px 0 0 0 #f18d4f, 30px 0 0 0 #fe9554, 60px 0 0 0 #f18d4f;
+}
+.pumpkin:before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 25px;
+  top: -20px;
+  left: 40px;
+  background-color: #94a789;
+}
+.pumpkin:after {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 25px;
+  top: -20px;
+  left: 51px;
+  background-image: linear-gradient(70deg, #94a789 50%, transparent 50%);
+}
+#pumpkin-eyes:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 23px;
+  top: 20%;
+  right: 70%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  background-image: linear-gradient(to left top, #400c18 50%, transparent 50%);
+}
+#pumpkin-eyes:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 23px;
+    top: 20%;
+    left: 70%;
+    background-image: linear-gradient(to left top, #400c18 50%, transparent 50%);
+}
+#pumpkin-mouth {
+  position: absolute;
+  border-radius: 0 0 30px 30px;
+  width: 100px;
+  height: 20px;
+  top: 60%;
+  background-color: #400c18;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: laugh 4s infinite;
+  animation: laugh 4s infinite;
+}
+#pumpkin-mouth:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffa066;
+  top: 0;
+  left: 50%;
+
+}
+#pumpkin-mouth:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffa066;
+  bottom: 0;
+  right: 70%;
+}
+
+.tombstone-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 350px;
+  z-index: 29;
+}
+.tombstone {
+  position: relative;
+  height: 17rem;
+  width: 9rem;
+  background-color: #92a8b5;
+  border: #b5d0e1 solid 5px;
+  border-radius: 70px 70px 0 0;
+  color: #b5d0e1;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 10px;
+}
+.tombstone:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(20, 1, 30, 0.1);
+  width: 100%;
+  height: 50px;
+}
+.tombstone p {
+  padding-top: 30px;
+  margin-left: 35px;
+}
+.tombstone span:before {
+  content: "";
+  position: absolute;
+  left: 35px;
+  top: 100px;
+  width: 65px;
+  height: 5px;
+  background: #b5d0e1;
+  box-shadow: 
+    0 10px 0 0 #b5d0e1,
+    0 20px 0 0 #b5d0e1;
+}
+.tombstone-bottom {
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+  width: 11.5rem;
+  height: 2em;
+  background-color: #b5d0e1;
+}
+.skull-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 260px;
+}
+.skull-top {
+  position: relative;
+  background-color: #fad5a1;
+  height: 4.5rem;
+  width: 5rem;
+  border-radius: 40px 40px 10px 10px;
+}
+.skull-top:after {
+  content: "";
+  position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    background-color: rgba(20, 1, 30, 0.15);
+  border-radius: 0px 40px 10px 10px;
+}
+#skull-nose {
+  position: absolute;
+  bottom: 0;
+  left: 35px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 5px 10px 5px;
+  border-color: transparent transparent #70414b transparent;
+}
+#skull-eyes:before {
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #70414b;
+  border-radius: 50px;
+  -webkit-animation: blink 5s infinite;
+  animation: blink 5s infinite;
+}
+#skull-eyes:after {
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #70414b;
+  border-radius: 50px;
+  -webkit-animation: blink 5s infinite;
+  animation: blink 5s infinite;
+}
+.skull-bottom {
+  background-color: #fad5a1;
+  height: 1rem;
+  width: 2.5rem;
+  border-radius: 0 0 10px 10px;
+  margin: 0 auto;
+}
+.skull-bottom:after {
+  content: "";
+  position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    background-color: rgba(20, 1, 30, 0.15);
+  border-radius: 0 0 10px 10px;
+}
+.witch-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 200px;
+}
+.witch-hat-point {
+  position: absolute;
+  top: -170px;
+  left: -30px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 70px 0 0 70px;
+  border-color: transparent transparent transparent #70424b;
+}
+.witch-hat-point:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 0 10px;
+  border-color: transparent transparent transparent rgba(20, 1, 30, 0.15);
+}
+.witch-hat-point:before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  left: -100px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 30px 80px 0;
+  border-color: transparent #70424b transparent transparent;
+}
+.witch-hat-top {
+  position: absolute;
+  top: -100px;
+  left: -40px;
+  border-bottom: 80px solid #70424b;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 70px;
+}
+.witch-hat-top:after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  border-bottom: 80px solid rgba(20, 1, 30, 0.15);
+  border-left: px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 10px;
+}
+.witch-hat-middle {
+  position: absolute;
+  z-index: -1;
+  top: -20px;
+  left: -50px;
+  border-bottom: 80px solid #5f1e22;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+}
+.witch-hat-middle #buckle {
+  margin-left: 20px;
+  width: 15px;
+  height: 40px;
+  border-color: #c78056;
+  border-style: solid;
+  border-width: 5px 4px 5px 5px;
+}
+.witch-hat-bottom {
+  background-color: #70414b;
+  height: 7rem;
+  width: 10rem;
+  border-radius: 60px 50px 0 0;
+}
+.witch-hat-bottom:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -169px;
+  border-bottom: 105px solid #70424b;
+  border-left: 200px solid transparent;
+}
+.ghoul-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  -webkit-animation: wave 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: wave 5s infinite;
+}
+.ghoul {
+  postion: relative;
+  border-bottom: 100px solid #49d6c3;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 25px;
+}
+.ghoul .hand {
+  position: absolute;
+  top: -35px;
+  left: -24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px 60px 80px 60px ;
+  background-color: #49d6c3;
+}
+.ghoul .hand:before {
+  content: "";
+  position: absolute;
+  bottom: -75px;
+  right: -5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 70px 30px;
+  border-color: transparent transparent #3db4a1 transparent;
+  transform: rotate(-6deg);
+}
+.ghoul #thumb {
+  position: absolute;
+  z-index: -2;
+  top: -10px;
+  left: -35px;
+  border-bottom: 50px solid #49d6c3;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  width: 10px;
+  transform: rotate(-90deg);
+}
+.ghoul #pointer {
+  position: absolute;
+  z-index: -2;
+  top: -54px;
+  left: -39px;
+  border-bottom: 40px solid #49d6c3;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  width: 8px;
+  transform: rotate(-40deg);
+ }
+.ghoul #middle {
+  position: absolute;
+  z-index: -2;
+  top: -80px;
+  left: -16px;
+  border-bottom: 50px solid #49d6c3;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  width: 8px;
+  transform: rotate(-10deg);
+}
+.ghoul #index {
+  position: absolute;
+  z-index: -2;
+  top: -80px;
+  left: 10px;
+  border-bottom: 50px solid #3db4a1;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  width: 7px;
+  transform: rotate(5deg);
+}
+.ghoul #pinky {
+  position: absolute;
+  z-index: -2;
+  top: -60px;
+  left: 25px;
+  border-bottom: 60px solid #3db4a1;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  width: 6px;
+  transform: rotate(10deg);
+}
+.ghoul #thumb:after,
+.ghoul #pointer:after,
+.ghoul #middle:after,
+.ghoul #index:after,
+.ghoul #pinky:after {
+    content: "";
+    position: absolute;
+    background-color: #ffecc4;
+    height: 6px;
+    width: 5px;
+    left: 2px;
+}
+.bubbles {
+  margin: 0 auto;
+  position: absolute;
+  z-index: -5;
+  bottom: 0;
+  left: 10px;
+  width: 150px;
+  height: 150px;
+  background-color: #ffecc4;
+  border-radius: 50%;
+  box-shadow: -110px 70px 0px -50px #ffecc4,-30px 60px 0 0 #ffecc4, 100px -50px 0 0 #ffecc4, 200px 0px 0 -10px #ffecc4, 300px -20px 0 0 #ffecc4, 400px -100px 0 -30px #ffecc4, 440px -50px 0 -50px #ffecc4, 500px -50px 0 -40px #ffecc4, 490px 30px 0 0 #ffecc4, 575px -60px 0 0 #ffecc4, 650px 0px 0 -50px #ffecc4, 600px 60px 0 0 #ffecc4, 620px 80px 0 0 #ffecc4, -110px 0px 0px -70px #ffecc4, 200px -100px 0px -70px #ffecc4, 220px -90px 0px -65px #ffecc4, 500px -100px 0px -70px #ffecc4, 475px -100px 0px -65px #ffecc4, 700px 30px 0px -60px #ffecc4;
+}
+.bubbles:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 900px;
+  height: 100px; 
+  background-color: #8e76c4;
+}
+
+.shadows {
+  position: relative;
+}
+.shadow:first-child {
+  content: "";
+  position: absolute;
+  left: -75px;
+  border-radius: 25px;
+  width: 900px;
+  height: 40px;
+  background-color: #9e84db;
+}
+.shadow:nth-child(2) {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: 150px;
+  border-radius: 25px;
+  width: 500px;
+  height: 20px;
+  background-color: #9e84db;
+  background-image: radial-gradient(circle at 0,#8e76c4 5%, transparent 0), radial-gradient(circle at 100%,#8e76c4 5%, transparent 0);
+}
+.shadow:nth-child(3) {
+  content: "";
+  position: absolute;
+  bottom: -90px;
+  left: 50px;
+  border-radius: 25px;
+  width: 700px;
+  height: 30px;
+  background-color: #9e84db;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg);}
+  25% { transform: rotate(5deg);}
+  50% { transform: rotate(0deg);}
+  75% { transform: rotate(10deg);}
+  100% { transform: rotate(0deg);}
+}
+@keyframes blink {
+  0% { transform: scaleY(1); }
+  95% { transform: scale(1); }
+  100% { transform: scaleY(0); }
+}
+@keyframes laugh {
+  0% { height: 20px; }
+  25% { height: 30px; }
+  50% { height: 15px; }
+  85% { height: 30px; }
+  100% { height: 20px; }
+}
+@keyframes fill{
+  0% { height: 20px; }
+  30% { height: 40px; }
+  90% { height: 20px;}
+  100%{ height: 20px;}
+}
+</style>
+    </head>
+    <body>
+
+        <h1>Happy Halloween</h1>
+        <h2>Trick or treat</h2>
+        <div class="wrapper">
+          <div class="ghoul-wrapper">
+            <div class="ghoul">
+              <div class="hand"></div>
+              <div class="fingers">
+                <div id="thumb"></div>
+                <div id="pointer"></div>
+                <div id="middle"></div>
+                <div id="index"></div>
+                <div id="pinky"></div>
+              </div>
+            </div>
+          </div>
+          <div class="witch-wrapper">
+            <div class="witch-hat-point"></div>
+            <div class="witch-hat-top"></div>
+            <div class="witch-hat-middle">
+              <div id="buckle"></div>
+            </div>
+            <div class="witch-hat-bottom"></div>
+          </div>
+          <div class="skull-wrapper">
+            <div class="skull-top">
+              <div id="skull-eyes"></div>
+              <div id="skull-nose"></div>
+            </div>
+            <div class="skull-bottom"></div>
+          </div>
+          <div class="tombstone-wrapper">
+            <div class="tombstone">
+              <p>RIP</p>
+              <span></span>
+            </div>
+            <div class="tombstone-bottom"></div>
+          </div>
+          <div class="pumpkin-wrapper">
+            <div class="pumpkin">
+              <div id="pumpkin-eyes"></div>
+              <div id="pumpkin-mouth"></div>
+            </div>
+          </div>
+          <div class="bottle-wrapper">
+            <div class="bottle">
+              <div id="liquid"></div>
+            </div>
+            <div class="neck"></div>
+             <div class="top"></div>
+          </div>
+           <div id="bottle2" class="bottle-wrapper">
+            <div class="bottle">
+              <div id="liquid"></div>
+            </div>
+            <div class="neck"></div>
+             <div class="top"></div>
+          </div>
+          <div class="bubbles"></div>
+        </div>
+        <div class="shadows">
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+        </div>
+    </body>
+<html>
