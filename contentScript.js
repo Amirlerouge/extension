@@ -15,4 +15,7 @@
         console.log('Value is set to ' + document.getElementById("pdp_product_title").innerHTMLe);
       });
 
-      
+      chrome.storage.local.set({shoePic: document.querySelector(".css-viwop1.u-full-width.u-full-height.css-m5dkrx").getAttribute("src")}, function() {
+      });
+
+    

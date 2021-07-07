@@ -7,6 +7,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   });
 
 
+
 chrome.storage.local.get(['shoeName'], function(result) {
   console.log('shoe model is' + result.shoeName);
 
@@ -14,4 +15,10 @@ chrome.storage.local.get(['shoeName'], function(result) {
 
 });
 
+chrome.storage.local.get(['shoePic'], function(result) {
+
+  document.getElementById("myImg").src = result.shoePic;
+
+
+});
 
