@@ -8,12 +8,14 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 
 
 
-chrome.storage.local.get(['shoeName'], function(result) {
-  console.log('shoe model is' + result.shoeName);
 
-  document.getElementById("price").innerHTML = result.shoeName;
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    document.getElementById("price").innerHTML = request.shoeName;
+    sendResponse({farewell: "goodbye"});
+  }
+);
 
-});
 
 chrome.storage.local.get(['shoePic'], function(result) {
 
@@ -21,4 +23,3 @@ chrome.storage.local.get(['shoePic'], function(result) {
 
 
 });
-
