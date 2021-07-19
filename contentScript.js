@@ -6,5 +6,7 @@ chrome.runtime.sendMessage({shoeName: document.getElementById("pdp_product_title
 
   
 
-    chrome.storage.local.set({shoePic: document.querySelector(".css-viwop1.u-full-width.u-full-height.css-m5dkrx").getAttribute("src")}, function() {
+  chrome.storage.local.set({shoePic: document.querySelector(".css-viwop1.u-full-width.u-full-height.css-m5dkrx").getAttribute("src")}, function() {
     });
+
+
